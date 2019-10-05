@@ -23,7 +23,7 @@ menu:
     submenu:
       - name: GitHub
         icon: github
-        link: http://github.com/alainpham
+        link: http://github.com/yanzhao-web
       - name: LinkedIn
         icon: linkedin-square
         link: http://www.linkedin.com/in/alainpham
