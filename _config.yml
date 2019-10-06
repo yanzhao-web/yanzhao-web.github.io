@@ -3,10 +3,10 @@ title: 潘柏信
 subtitle: 个人站
 description: 欢迎来到我的个人站~
 # 头像里面的标题
-avatarTitle: leopardpan
+avatarTitle: yanzhao
 # 头像里面的描述
-avatarDesc: iOS / 机器学习
-url: "http://baixin.io"
+avatarDesc: SOC设计 / IC设计
+url: "http://yanzhao-web.github.io"
 
 # Comment
 comment:
@@ -17,12 +17,12 @@ comment:
 # Social
 social:
     weibo: 5366874726 
-    github: leopardpan
+    github: yanzhao-web
     # zhihu: panpanleopard
     # juejin: xxx
     jianshu: 2ada30d8d0f7
     # twitter: 
-    mail: leopardpan@icloud.com
+    mail: yzhao1@unisoc.com
 
 
 # 百度统计 
