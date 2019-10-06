@@ -1,56 +1,40 @@
-<!doctype html>
-<html lang="en">
-{% include head.html %}
-<body>
-	{% include header.html %}
-	<div class="container">
+<!DOCTYPE html>
+<html>
 
-	{% if page.id %}
-	<p>
-		<strong>{{ page.published | date: '%B %d, %Y' }}</strong> ( last updated : {{ page.date | date: '%B %d, %Y' }} )
-		<br>
-		{% for tag in page.tags %}
-			<a class="label label-default" href="/tags/#{{ tag | slugify }}">{{ tag }}</a>
-		{% endfor %}
-    </p>
-	{%if page.github %}
-	<p>
-    	<a href="{{ page.github }}" class="btn btn-default">
-		    <i class="fa fa-github fa-2x"></i>  {{ page.github }}
-			</a>
-	</p>
-	{% endif %}
-	<hr>
-	<h1>Abstract</h1>
-	{% endif %}
+  {% include head.html %}
 
-	{{ content }}
+  <body>
 
+    <span class="mobile btn-mobile-menu">        
+      <div class="nav_container">
+         <nav class="nav-menu-item" style = "float:right">
+            <i class="nav-menu-item">
+              <a href="/#blog" title="{{site.blog_button.description}}" class="blog-button">  {{site.blog_button.title}}
+              </a>
+            </i>
+            {% for item in site.nav %}
+                <i class="nav-menu-item">
 
-	{% if page.id %}
-	<p>Originally published {{ page.published | date: '%B %d, %Y' }}
-    <br> Latest update {{ page.date | date: '%B %d, %Y' }}</p>
+                  <a href="{{item.url}}" title="{{item.description}}" class="btn-mobile-menu__icon">
+                      {{item.title}}
+                  </a>
+                </i>
+            {% endfor %}
+          </nav>
+      </div>
+    </span>
+    
+    {% include side-panel.html %}
 
-    <p><strong>Related posts :</strong></p>
-        <ul>
-	    {% for allpost in site.posts %}
-			  {% for tag in page.tags %}
-			  {% if allpost.tags contains tag and allpost.id != page.id %}
-			  <li>
-			      <a href="{{ allpost.url }}">
-			        {{ allpost.title }}
-			      </a>
-			  </li>
-			  {% break %}
-			  {% endif %}
-			  {% endfor %}
-		{% endfor %}
-		</ul>
-	{% endif %}
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            {{ content }}
+            {% include footer.html %}
+        </div>
+    </div>
+    
+    {% include external.html %}
+    
+  </body>
 
-	{% include disqus.html %}
-	</div>
-	{% include footer.html %}
-	{% include analytics.html %}
-</body>
 </html>
