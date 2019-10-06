@@ -2,7 +2,7 @@
 layout: post
 title: Hello World！ 
 date: 2019-10-06 
-tags: blog study    
+tags: 玩转博客    
 ---
 
 # this is my first blog!
